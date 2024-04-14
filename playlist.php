@@ -54,9 +54,14 @@
                 $tutor_result = mysqli_query($conn, $select_tutor);
                 $fetch_tutor = mysqli_fetch_assoc($tutor_result);
 
+
+                $count_video_query = "select * from content where playlist_id = '$playlist_id'";
+                $count_video_result = mysqli_query($conn, $count_video_query);
+                $count_video = mysqli_num_rows($count_video_result);
+
                 echo  '<div class="thumb">
                     <img src="uploaded_files/' . $fetch_playlist["thumb"] . '" alt="">
-                    <span>10 videos</span>
+                    <span>'.$count_video.' videos</span>
                 </div>
             </div>
             <div class="column">
