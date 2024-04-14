@@ -18,12 +18,27 @@
 
 <?php include './components/user_header.php'; ?>
 
+
 <?php
   
     
     if(isset($_SESSION['user_id'])) {
         // User is logged in, proceed with displaying the video links
-        $user_id =  $_SESSION['user_id'];
+         $user_id =  $_SESSION['user_id'];
+
+         $query_user = "select * from users where id= '$user_id '";
+         $user_result =  mysqli_query($conn, $query_user);
+         $user_res = mysqli_fetch_assoc($user_result);
+
+         $isUserPremium = $user_res["premium"];
+         
+
+         if( $_GET['ispremium'] =="yes"){
+            if($isUserPremium == 0){
+               header("Location: premium.php");
+            }
+         }
+
     } else {
         // User is not logged in, redirect to the login page
         header("Location: login.php");

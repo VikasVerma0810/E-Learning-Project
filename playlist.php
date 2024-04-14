@@ -102,13 +102,16 @@
             <?php
             $playlist_id =  $_GET['playlist_id'];
             $tutor_id = $_GET['tutor_id'];
+            $isPremium = $_GET['isPremium'];
 
             $select_video = "SELECT * FROM `content` WHERE playlist_id ='$playlist_id'  AND status = 'active' ORDER BY id DESC";
             $video_result = mysqli_query($conn, $select_video);
 
             while($fetch_video = mysqli_fetch_assoc($video_result)){
                 
-                echo '<a class="box" href="watch-video.php?video_id=' . $fetch_video["id"] . ' " id="video-link" data-video-id="' . $fetch_video["id"] . '">
+                echo '<a class="box" href="watch-video.php?ispremium='.$isPremium .'&video_id=' . $fetch_video["id"] .'" id="video-link" data-video-id="' . $fetch_video["id"] . '">
+
+
               <i class="fas fa-play"></i>
               <img src="uploaded_files/' . $fetch_video["thumb"] . '" alt="" style="height: 30rem;">
               <h3>' . $fetch_video['title'] . '</h3>

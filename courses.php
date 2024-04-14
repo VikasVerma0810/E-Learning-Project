@@ -60,7 +60,9 @@
                     <span>10 videos</span>
                     </div>
                     <h3 class="title">'.$course_row["title"].'</h3>
-                    <a href="playlist.php?playlist_id='.$course_row["id"].'&tutor_id='.$tutor_id.'" class="inline-btn">view playlist</a>
+
+                    <a href="playlist.php?playlist_id='.$course_row["id"].'&tutor_id='.$tutor_id.'&isPremium='.$course_row["premium"].'" class="inline-btn">view playlist</a>
+
                 </div>';
             }
             
