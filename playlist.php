@@ -62,8 +62,15 @@
             <div class="column">
             <div class="tutor">
                <img src="uploaded_files/' . $fetch_tutor["image"] . '" alt="">
-               <div>
-                  <h3>' . $fetch_tutor['name'] . '</h3>
+               <div>';
+                    if($fetch_playlist["premium"] == "yes"){
+                        echo '<h3>'.$fetch_tutor["name"].'<i class="fa-solid fa-crown" style="color:#FFD700"></i> </h3>';
+                    }else{
+                        echo '<h3>'.$fetch_tutor["name"].'</h3>'; 
+                    }
+
+
+                 echo '
                   <span>' . $fetch_playlist['date'] . '</span>
                </div>
             </div>
