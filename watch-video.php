@@ -19,6 +19,20 @@
 <?php include './components/user_header.php'; ?>
 
 <?php
+  
+    
+    if(isset($_SESSION['user_id'])) {
+        // User is logged in, proceed with displaying the video links
+        $user_id =  $_SESSION['user_id'];
+    } else {
+        // User is not logged in, redirect to the login page
+        header("Location: login.php");
+        exit(); // Stop further execution of the script
+    }
+?>
+
+
+<?php
 
     
     $get_id = $_GET['video_id'];
