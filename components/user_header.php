@@ -93,6 +93,8 @@
             echo '<img src="uploaded_files/'.$imageUrl.'" alt="">';
                   if($premium==1){
                      echo '<h3 class="name">'. $name .'<i class="fa-solid fa-crown" style="color:#FFD700"></i></h3>';
+                  }else{
+                     echo '<h3 class="name">'. $name .'</h3>';
                   }
                  
                   echo '<p class="role">student</p>
